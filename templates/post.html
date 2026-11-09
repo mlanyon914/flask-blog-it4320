@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{% block title %} {{ post['title'] }} {% endblock %}</h2>
+    <span class="badge">{{ post['created'] }}</span>
+    <p style="white-space: pre-wrap; margin-top: 1rem; line-height: 1.6;">{{ post['content'] }}</p>
+    <hr>
+    <a href="{{ url_for('edit', id=post['id']) }}" class="btn">Edit Post</a>
+    <a href="{{ url_for('index') }}" style="margin-left: 1rem;">Back to Home</a>
+{% endblock %}
